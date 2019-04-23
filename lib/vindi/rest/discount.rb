@@ -1,10 +1,8 @@
 module Vindi
   module Rest
-
     # Methods for the discount API
     # @see https://vindi.github.io/api-docs/dist/#!/discounts
     module Discount
-
       # Get a single discount from a merchant
       #
       # @param discount_id [Integer] ID of the discount
@@ -17,16 +15,16 @@ module Vindi
       end
 
       # Create a discount for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options discount attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/discounts/POST_version_discounts_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/discounts/POST_version_discounts_format
       # @return [Hash] The discount created
       # @example Create a discount for a merchant vindi
       #   client.create_discount(product_item_id: 118,
       #                          discount_type: "percentage", percentage: 10,
       #                          amount: 1, quantity: 1, cycles: 1)
       def create_discount(options = {})
-        post('discounts', options)[:discount]
+        post("discounts", options)[:discount]
       end
 
       # Delete a discount from merchant vindi

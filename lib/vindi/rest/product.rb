@@ -1,19 +1,17 @@
 module Vindi
   module Rest
-
     # Methods for the products API
     # @see https://vindi.github.io/api-docs/dist/#!/products
     module Product
-
       # List products for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of products for a merchant.
       # @example Get all products from merchant vindi
       def list_products(options = {})
-        get('products', options)[:products]
+        get("products", options)[:products]
       end
-      
+
       # Get a single product from a merchant
       #
       # @param product_id [Integer] ID of the product
@@ -26,14 +24,14 @@ module Vindi
       end
 
       # Create a product for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options product attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/products/POST_version_products_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/products/POST_version_products_format
       # @return [Hash] The product created
       # @example Create a product for a merchant vindi
       #   client.create_product(name: 'My product', interval: 12)
       def create_product(options = {})
-        post('products', options)[:product]
+        post("products", options)[:product]
       end
 
       # Edit a product

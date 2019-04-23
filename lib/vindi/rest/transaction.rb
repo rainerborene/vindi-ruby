@@ -1,19 +1,17 @@
 module Vindi
   module Rest
-
     # Methods for the Transaction API
     # @see https://vindi.github.io/api-docs/dist/#!/transactions
     module Transaction
-
       # List transactions for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of transactions for a merchant.
       # @example Get all transactions from merchant vindi
       def list_transactions(options = {})
-        get('transactions', options)[:transactions]
+        get("transactions", options)[:transactions]
       end
-      
+
       # Get a single transaction from a merchant
       #
       # @param transaction_id [Integer] ID of the transaction
@@ -26,16 +24,16 @@ module Vindi
       end
 
       # Create a transaction for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options transaction attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/transactions/POST_version_transactions_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/transactions/POST_version_transactions_format
       # @return [Hash] The transaction created
       # @example Create a transaction for a merchant vindi
       #   client.create_transaction(charge_id: 475, amount: 100,
       #                             payment_method_code: 'cash',
       #                             paid_at: "2017-09-08")
       def create_transaction(options = {})
-        post('transactions', options)[:transaction]
+        post("transactions", options)[:transaction]
       end
 
       # Edit a transaction

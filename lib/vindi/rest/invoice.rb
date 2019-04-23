@@ -1,15 +1,13 @@
 module Vindi
   module Rest
-
     # Methods for the invoices API
     # @see https://vindi.github.io/api-docs/dist/#!/invoices
     module Invoice
-
       # List invoice for the authenticate user
       # @return [Array<Hash>] A list of invoices for a merchant.
       # @example Get all invoices from merchant vindi
       def list_invoices(options = {})
-        get('invoices', options)[:invoices]
+        get("invoices", options)[:invoices]
       end
 
       # Get a single invoice from a merchant
@@ -31,7 +29,7 @@ module Vindi
       # @example Create a invoice for a merchant vindi
       #   client.create_invoice({ bill_id: 71, amount: 1 })
       def create_invoice(options = {})
-        post('invoices', options)[:invoice]
+        post("invoices", options)[:invoice]
       end
 
       # Delete a invoice from merchant vindi

@@ -1,15 +1,13 @@
 module Vindi
   module Rest
-
     # Methods for the notifications API
     # @see https://vindi.github.io/api-docs/dist/#!/notifications
     module Notification
-
       # List notifications for the authenticate user
       # @return [Array<Hash>] A list of notifications for a merchant.
       # @example Get all notifications from merchant vindi
       def list_notifications(options = {})
-        get('notifications', options)[:notifications]
+        get("notifications", options)[:notifications]
       end
 
       # Get a single notification from a merchant
@@ -35,7 +33,7 @@ module Vindi
       #                              trigger_type: "charge_created_at",
       #                              trigger_day: 5, bcc: "")
       def create_notification(options = {})
-        post('notifications', options)[:notification]
+        post("notifications", options)[:notification]
       end
 
       # Edit a notification

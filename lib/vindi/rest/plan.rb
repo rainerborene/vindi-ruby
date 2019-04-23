@@ -1,19 +1,17 @@
 module Vindi
   module Rest
-
     # Methods for the Plans API
     # @see https://vindi.github.io/api-docs/dist/#!/plans
     module Plan
-
       # List plans for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of plans for a merchant.
       # @example Get all plans from merchant vindi
       def list_plans(options = {})
-        get('plans', options)[:plans]
+        get("plans", options)[:plans]
       end
-      
+
       # Get a single plan from a merchant
       #
       # @param plan_id [Integer] ID of the plan
@@ -26,14 +24,14 @@ module Vindi
       end
 
       # Create a plan for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options Plan attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/plans/POST_version_plans_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/plans/POST_version_plans_format
       # @return [Hash] The plan created
       # @example Create a plan for a merchant vindi
       #   client.create_plan(name: 'My Plan', interval: 12)
       def create_plan(options = {})
-        post('plans', options)[:plan]
+        post("plans", options)[:plan]
       end
 
       # Edit a plan

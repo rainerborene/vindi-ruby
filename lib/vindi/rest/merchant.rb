@@ -1,10 +1,8 @@
 module Vindi
   module Rest
-
     # Methods for the merchants API
     # @see https://vindi.github.io/api-docs/dist/#!/merchants
     module Merchant
-
       # List merchants for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
@@ -12,7 +10,7 @@ module Vindi
       # @example Get all merchants from merchant vindi
       #   client.list_merchants
       def list_merchants(options = {})
-        get('merchants', options)[:merchants]
+        get("merchants", options)[:merchants]
       end
 
       # Get a current merchant for the authenticate user

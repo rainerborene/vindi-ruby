@@ -1,5 +1,3 @@
-require 'vindi/connection'
-
 module Vindi
   module Request
     include Vindi::Connection

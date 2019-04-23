@@ -1,19 +1,17 @@
 module Vindi
   module Rest
-
     # Methods for the periods API
     # @see https://vindi.github.io/api-docs/dist/#!/periods
     module Period
-
       # List periods for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of periods for a merchant.
       # @example Get all periods from merchant vindi
       def list_periods(options = {})
-        get('periods', options)[:periods]
+        get("periods", options)[:periods]
       end
-      
+
       # Get a single period from a merchant
       #
       # @param period_id [Integer] ID of the period
@@ -26,9 +24,9 @@ module Vindi
       end
 
       # Create a period for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options period attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/periods/POST_version_periods_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/periods/POST_version_periods_format
       # @param bill_id [Integer] ID of the period to generate a bill
       # @return [Hash] The period created
       # @example Create a period for a merchant vindi

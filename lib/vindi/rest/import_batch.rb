@@ -1,17 +1,15 @@
 module Vindi
   module Rest
-
     # Methods for the Import Batch API
     # @see https://vindi.github.io/api-docs/dist/#!/import_batches
     module ImportBatch
-
       # List import_batchs for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of imported batches for a merchant.
       # @example Get all import_batches from merchant vindi
       def list_import_batches(options = {})
-        get('import_batches', options)[:import_batches]
+        get("import_batches", options)[:import_batches]
       end
 
       # Get a single import_batch from a merchant
@@ -31,7 +29,7 @@ module Vindi
       # @see https://vindi.github.io/api-docs/dist/#!/import_batches/POST_version_import_batches_format
       # @return [Hash] The import_batch created
       def create_import_batch(options = {})
-        post('import_batches', options)[:import_batch]
+        post("import_batches", options)[:import_batch]
       end
     end
   end

@@ -1,17 +1,15 @@
 module Vindi
   module Rest
-
     # Methods for the messages API
     # @see https://vindi.github.io/api-docs/dist/#!/messages
     module Message
-
       # List messages for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of messages for a merchant.
       # @example Get all messages from merchant vindi
       def list_messages(options = {})
-        get('messages', options)[:messages]
+        get("messages", options)[:messages]
       end
 
       # Get a single message from a merchant
@@ -34,7 +32,7 @@ module Vindi
       #   client.create_message({ "customer_id": 2, "charge_id": 71,
       #                           "notification_id": 6, "email": "cliente@email.com" })
       def create_message(options = {})
-        post('messages', options)[:message]
+        post("messages", options)[:message]
       end
     end
   end

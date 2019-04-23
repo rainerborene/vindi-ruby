@@ -1,7 +1,4 @@
-require 'vindi/default'
-
 module Vindi
-
   # Configuration options for Client
   module Configuration
     attr_reader :user_agent, :middleware, :connection_options

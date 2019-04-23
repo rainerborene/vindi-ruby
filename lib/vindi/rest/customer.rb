@@ -1,17 +1,15 @@
 module Vindi
   module Rest
-
     # Methods for the Customers API
     # @see https://vindi.github.io/api-docs/dist/#!/customers
     module Customer
-
       # List customer for the authenticate user
       # @return [Array<Hash>] A list of customers for a merchant.
       # @example Get all customers from merchant vindi
       def list_customers(options = {})
-        get('customers', options)[:customers]
+        get("customers", options)[:customers]
       end
-      
+
       # Get a single customer from a merchant
       #
       # @param customer_id [Integer] ID of the customer
@@ -24,14 +22,14 @@ module Vindi
       end
 
       # Create a customer for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options customer attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/customers/POST_version_customers_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/customers/POST_version_customers_format
       # @return [Hash] The customer created
       # @example Create a customer for a merchant vindi
       #   client.create_customer(name: 'John Doe', email: 'john.doe@mail.com')
       def create_customer(options = {})
-        post('customers', options)[:customer]
+        post("customers", options)[:customer]
       end
 
       # Edit a customer

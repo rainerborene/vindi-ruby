@@ -1,17 +1,15 @@
 module Vindi
   module Rest
-
     # Methods for the issues API
     # @see https://vindi.github.io/api-docs/dist/#!/issues
     module Issue
-
       # List issues for the authenticate user
       # @option options [Integer] :page (1) Page number.
       # @option options [Integer] :merchant Merchant account
       # @return [Array<Hash>] A list of issues for a merchant.
       # @example Get all issues from merchant vindi
       def list_issues(options = {})
-        get('issues', options)[:issues]
+        get("issues", options)[:issues]
       end
 
       # Get a single issue from a merchant

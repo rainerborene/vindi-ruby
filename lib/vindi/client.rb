@@ -1,6 +1,4 @@
-require 'vindi/configuration'
-require 'vindi/request'
-require 'vindi/rest'
+require "vindi/rest"
 
 module Vindi
   class Client

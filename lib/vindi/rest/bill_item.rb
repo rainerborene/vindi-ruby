@@ -1,10 +1,8 @@
 module Vindi
   module Rest
-
     # Methods for the bill_items API
     # @see https://vindi.github.io/api-docs/dist/#!/bill_items
     module BillItem
-      
       # Get a single bill_item from a merchant
       #
       # @param bill_item_id [Integer] ID of the bill_item

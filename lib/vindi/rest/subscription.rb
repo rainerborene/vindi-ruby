@@ -1,17 +1,15 @@
 module Vindi
   module Rest
-
     # Methods for the subscriptions API
     # @see https://vindi.github.io/api-docs/dist/#!/subscriptions
     module Subscription
-
       # List subscription for the authenticate user
       # @return [Array<Hash>] A list of subscriptions for a merchant.
       # @example Get all subscriptions from merchant vindi
       def list_subscriptions(options = {})
-        get('subscriptions', options)[:subscriptions]
+        get("subscriptions", options)[:subscriptions]
       end
-      
+
       # Get a single subscription from a merchant
       #
       # @param subscription_id [Integer] ID of the subscription
@@ -24,16 +22,16 @@ module Vindi
       end
 
       # Create a subscription for a merchant vindi
-      # 
+      #
       # @option options [Hash] :options subscription attributes
-      # @see https://vindi.github.io/api-docs/dist/#!/subscriptions/POST_version_subscriptions_format 
+      # @see https://vindi.github.io/api-docs/dist/#!/subscriptions/POST_version_subscriptions_format
       # @return [Hash] The subscription created
       # @example Create a subscription for a merchant vindi
-      #   client.create_subscription(plan_id: 12, customer_id: 142, 
+      #   client.create_subscription(plan_id: 12, customer_id: 142,
       #                              payment_method_code: "credit_card",
       #                              product_items: [{ product_id: 14 }])
       def create_subscription(options = {})
-        post('subscriptions', options)[:subscription]
+        post("subscriptions", options)[:subscription]
       end
 
       # Edit a subscription

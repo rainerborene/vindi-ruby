@@ -1,7 +1,3 @@
-Dir[File.expand_path("../rest/**/*.rb", __FILE__)].each do |file|
-  require file
-end
-
 module Vindi
   module Rest
     include Vindi::Rest::Plan

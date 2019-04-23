@@ -1,17 +1,15 @@
 module Vindi
   module Rest
-
     # Methods for the charges API
     # @see https://vindi.github.io/api-docs/dist/#!/charges
     module Charge
-
       # List charge for the authenticate user
       # @return [Array<Hash>] A list of charges for a merchant.
       # @example Get all charges from merchant vindi
       def list_charges(options = {})
-        get('charges', options)[:charges]
+        get("charges", options)[:charges]
       end
-      
+
       # Get a single charge from a merchant
       #
       # @param charge_id [Integer] ID of the charge

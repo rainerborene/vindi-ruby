@@ -1,15 +1,13 @@
 module Vindi
   module Rest
-
     # Methods for the bills API
     # @see https://vindi.github.io/api-docs/dist/#!/bills
     module Bill
-
       # List bill for the authenticate user
       # @return [Array<Hash>] A list of bills for a merchant.
       # @example Get all bills from merchant vindi
       def list_bills(options = {})
-        get('bills', options)[:bills]
+        get("bills", options)[:bills]
       end
 
       # Get a single bill from a merchant
@@ -32,7 +30,7 @@ module Vindi
       #   client.create_bill(customer_id: 2, payment_method_code: "credit_card",
       #                      bill_items: [{ product_id: 26, amount: 1 }])
       def create_bill(options = {})
-        post('bills', options)[:bill]
+        post("bills", options)[:bill]
       end
 
       # Edit a bill
